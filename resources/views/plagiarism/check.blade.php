@@ -592,13 +592,13 @@
             const charCount = text.length;
             const words = text.trim().split(/\s+/).filter(word => word.length > 0);
             const wordCount = text.trim() === '' ? 0 : words.length;
-            
+
             // Update character count (no limit)
             const charCountEl = textarea.parentElement.querySelector('.char-count');
             if (charCountEl) {
                 charCountEl.textContent = `${charCount.toLocaleString()} karakter`;
             }
-            
+
             // Update word and character info
             const wordCharInfoEl = textarea.parentElement.querySelector('.word-char-info');
             if (wordCharInfoEl) {
@@ -610,14 +610,14 @@
         document.addEventListener('DOMContentLoaded', function() {
             const textareaA = document.getElementById('document_a');
             const textareaB = document.getElementById('document_b');
-            
+
             if (textareaA) {
                 updateCounter(textareaA);
                 textareaA.addEventListener('input', function() {
                     updateCounter(this);
                 });
             }
-            
+
             if (textareaB) {
                 updateCounter(textareaB);
                 textareaB.addEventListener('input', function() {
